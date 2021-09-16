@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 RUN apk add --no-cache git
 
-CMD ["--help"]
+# CMD ["--help"]
 
 RUN mkdir -p /etc/iplant/de/crypto && \
     touch /etc/iplant/de/crypto/pubring.gpg && \
@@ -13,6 +13,9 @@ RUN mkdir -p /etc/iplant/de/crypto && \
     touch /etc/iplant/de/crypto/trustdb.gpg
 
 COPY conf/main/logback.xml /usr/src/app/
+
+# copy config file 
+COPY terrain.properties /etc/iplant/de/terrain.properties
 
 COPY project.clj /usr/src/app/
 RUN lein deps

@@ -29,5 +29,5 @@
 build.xml
 test2junit
 Dockerfile.local
-terrain.properties
+# terrain.properties
 .eastwood
